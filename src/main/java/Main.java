@@ -42,13 +42,21 @@ public class Main {
                     break;
 
                 } else {
-                    System.out.println("Введите цену");
-                    double price = sc.nextDouble();
-                    Product newProduct = new Product(name, price);
-                    productsList.add(newProduct);
-                    System.out.println("Добавленные товары: ");
-                    for (Product k : productsList) {
-                        System.out.println(k.name);
+                    while (true) {
+                        Scanner sc1 = new Scanner(System.in);
+                        System.out.println("Введите цену");
+                        if (sc1.hasNextDouble()) {
+                            double price = sc1.nextDouble();
+                            Product newProduct = new Product(name, price);
+                            productsList.add(newProduct);
+                            System.out.println("Добавленные товары: ");
+                            for (Product k : productsList) {
+                                System.out.println(k.name);
+                            }
+                            break;
+                        } else {
+                            System.out.println("Неверное значение цены");
+                        }
                     }
                 }
             }

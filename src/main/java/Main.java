@@ -23,8 +23,8 @@ public class Main {
         }
 
         ArrayList<Product> productsList = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
         while (true) {
-            Scanner sc = new Scanner(System.in);
             System.out.println("Введите название товара");
             String name = sc.nextLine();
             if (name.trim().isEmpty()) {
